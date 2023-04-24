@@ -30,12 +30,12 @@ public class EmployeImpl implements EmployeService {
 		Response response = new Response();
 		// TODO Auto-generated method stub
 		utilities.logger(STRAT_PROCESS);
-		
+
 		utilities.validateDates(birthdate, companydate);
 		utilities.validateAge(birthdate);
-		
+
 		utilities.logger(BEFORE_SAVE);
-		response =saveEndpoint(name, lastName, documentType, birthdate, companydate, post, salary);
+		response = saveEndpoint(name, lastName, documentType, birthdate, companydate, post, salary);
 		utilities.logger(AFTER_SAVE);
 
 		return response;
@@ -45,7 +45,7 @@ public class EmployeImpl implements EmployeService {
 			String companydate, String post, Double salary) {
 
 		URL url;
-		Response employeSave = new  Response();
+		Response employeSave = new Response();
 		try {
 			url = new URL(ENDPOINT);
 			final EmployeServiceImplService employeServiceImplService = new EmployeServiceImplService(url);
@@ -61,7 +61,7 @@ public class EmployeImpl implements EmployeService {
 			employee.setPost(post);
 			employee.setSalary(salary);
 
-			 employeSave = port.save(employee);
+			employeSave = port.save(employee);
 
 			System.out.print(employeSave);
 		} catch (MalformedURLException e) {

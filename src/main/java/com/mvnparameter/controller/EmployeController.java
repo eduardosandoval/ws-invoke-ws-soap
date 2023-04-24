@@ -24,7 +24,8 @@ public class EmployeController {
 	com.mvnparameter.service.EmployeService employeService;
 
 	//get method that is responsible for saving the employee information
-	@GetMapping(value = "/saveEmploye/{name}/{lastName}/{documenttype}/{birthdate}/{companydate}/{post}/{salary}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/saveEmploye/{name}/{lastName}/{documenttype}/{birthdate}/{companydate}/{post}/{salary}",
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> saveEmploye(@PathVariable(required = true) String name,
 			@PathVariable(required = true) String lastName,
 			@PathVariable(required = true) String documenttype,
